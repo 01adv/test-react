@@ -1,0 +1,132 @@
+/*
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+  <App />
+  </React.StrictMode>
+  );
+  
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+*/
+
+
+/*
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+function Greeting() {
+  return (
+    <>
+
+    <div className='someClass'>
+      <div>
+      <h3>Hello People</h3>
+      <ul>
+        <li>
+          <a href='https/'>link</a>
+        </li>
+        <li>
+          <a href='https://www.google.com'>new google link</a>
+        </li>
+      </ul>
+      </div>
+      <h2>Hello World</h2>
+    </div>
+
+    <Person></Person>
+    <Message/>
+    </>
+  )
+}
+
+const Person = () => <h2>Ram Singh</h2>
+
+const Message = () => {
+  return (
+
+    <p>
+    hello friends kese ho aap
+  </p>
+    )
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<Greeting />)
+
+
+// using this method it'll erase whole document and render the assigned one
+// root.render(<Message></Message>)
+
+*/
+
+
+
+
+-----**** props
+these are the properties defined in parent function but can be used in child funcation 
+ 
+((((prop using approaches))))
+function book(props){
+  const{img, title, author} =props
+  return{
+    <h3>{author}</h3>
+    <img src={img}/>
+  }
+}
+
+function book(img, title,author){
+  return{
+    <h3>{author}</h3>
+    <img src={img}/>
+  }
+}
+
+
+children prop is a special type of prop
+which we use to render anything inside the component in react
+<component>children prop content</component>
+
+
+function book(props){
+  const{img, title, author, children} = props
+  return{
+    <h3>{author}</h3>
+    {children}
+  }
+}
+
+
+
+///// i have a list which have some kind of data and i can iterate over that list using map and return whatever html structure i wanna see on screen 
+
+const naam = ['jonnie', 'ballu', 'kantara']
+const newNaam = naam.map((name) =>{
+  return(
+    <h2>{name}</h2>
+    )
+  })
+  // console.log(name)
+console.log(newNaam)
+
+
+const BookList = () => {
+  return (
+    <section className='booklist'>
+    {newNaam}
+    </section>
+  )
+};
+
+this will show the values of array in html render 
